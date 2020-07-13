@@ -53,6 +53,19 @@ public class ShopAndCookController {
 		return null;
 		
 	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/deleteRecipe",consumes="application/json")
+	public List<Recipe> insertRecipe(@RequestParam String id) {
+		try {
+			System.out.println("recipe==== id ==>>>>"+id);
+			return projectService.deleteRecipe(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return null;
+		
+	}
 	/*@RequestMapping(method=RequestMethod.POST,value="/insertRecipe")
 	public List<Recipe> insertRecipe(@RequestParam String recipe) {
 		try {
